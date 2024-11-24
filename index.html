@@ -1,0 +1,15 @@
+<form action="send_email.php" method="POST" enctype="multipart/form-data">
+    <label for="to">À :</label>
+    <input type="email" name="to" required>
+    
+    <label for="subject">Objet :</label>
+    <input type="text" name="subject" required>
+    
+    <label for="message">Message :</label>
+    <textarea name="message" required></textarea>
+    
+    <label for="attachment">Pièce jointe :</label>
+    <input type="file" name="attachment">
+    
+    <input type="submit" value="Envoyer">
+</form>
