@@ -8,35 +8,53 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
         header {
             background-color: #08411A;
             color: white;
+            padding: 1em 0;
             text-align: center;
-            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .photo-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px; /* Ajustez cette valeur selon vos besoins */
+            margin: 0 auto;
+        }
+        .photo-container img {
+            max-width: 150px; /* Ajustez cette valeur selon vos besoins */
+            max-height: 150px; /* Ajustez cette valeur selon vos besoins */
+            border: 2px solid white; /* Ajoute un cadre blanc autour des photos */
+            border-radius: 5px; /* Ajoute des coins arrondis aux photos */
+        }
+        .photo-container .middle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .photo-container .middle p {
+            margin-top: 0.5em;
+            color: white;
         }
         main {
-            padding: 2rem;
+            padding: 2em;
         }
-        h2 {
-            color: #4285f4;
-        }
-        .services {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        .service {
-            flex-basis: 30%;
-            margin-bottom: 1rem;
-        }
-        iframe {
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
             width: 100%;
-            height: 700px;
-            border: none;
+            bottom: 0;
         }
     </style>
 </head>
