@@ -1,20 +1,32 @@
 // script.js
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contact-form');
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
 
-    form.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
 
-        // Ici, vous pouvez ajouter le code pour envoyer un e-mail
-        // Par exemple, en utilisant une API d'envoi d'e-mails ou en envoyant les données à votre serveur
-        console.log('Envoi du formulaire :', { name, email, message });
+        try {
+            // Remplacez cette URL par celle de votre backend pour l'envoi d'e-mails
+            const response = await fetch('/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
 
-        // Réinitialiser le formulaire après l'envoi
-        form.reset();
-        alert('Votre message a été envoyé !');
+            if (response.ok) {
+                alert('Message envoyé avec succès !');
+                contactForm.reset();
+            } else {
+                alert('Erreur lors de l\'envoi du message. Veuillez réessayer.');
+            }
+        } catch (error) {
+            console.error('Erreur:', error);
+            alert('Une erreur est survenue. Veuillez réessayer plus tard.');
+        }
     });
 });
