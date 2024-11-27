@@ -17,6 +17,32 @@
             color: white;
             padding: 1em 0;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .photo-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px; /* Ajustez cette valeur selon vos besoins */
+            margin: 0 auto;
+        }
+        .photo-container img {
+            max-width: 150px; /* Ajustez cette valeur selon vos besoins */
+            max-height: 150px; /* Ajustez cette valeur selon vos besoins */
+            border: 2px solid white; /* Ajoute un cadre blanc autour des photos */
+            border-radius: 5px; /* Ajoute des coins arrondis aux photos */
+        }
+        .photo-container .middle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .photo-container .middle p {
+            margin-top: 0.5em;
+            color: white;
         }
         main {
             padding: 2em;
@@ -39,22 +65,29 @@
         </div>
         <div class="middle">
             <img src="images/Logo_SIPB.png" alt="Photo 2">
-            <p>06.07.81.74.60</p>
+            <p>SIPB64</p>
         </div>
         <div>
             <img src="photo3.jpg" alt="Photo 3">
         </div>
     </header>
     <main>
-        <h2>À propos de moi</h2>
-        <p>Bonjour, je suis [Votre Nom]. Je suis passionné par [votre passion ou domaine d'intérêt].</p>
-        <h2>Mes Projets</h2>
-        <p>Voici quelques-uns de mes projets récents :</p>
-        <ul>
-            <li>Projet 1</li>
-            <li>Projet 2</li>
-            <li>Projet 3</li>
-        </ul>
+        <section class="services">
+            <div class="service">
+                <h2>Dépannage</h2>
+                <p>Résolution rapide de vos problèmes informatiques.</p>
+            </div>
+            <div class="service">
+                <h2>Formation</h2>
+                <p>Formations personnalisées pour améliorer vos compétences.</p>
+            </div>
+            <div class="service">
+                <h2>Infogérance</h2>
+                <p>Gestion complète de votre infrastructure informatique.</p>
+            </div>
+        </section>
+        <h2>Contactez-moi</h2>
+        <iframe src="https://docs.google.com/forms/d/e/VOTRE_ID_DE_FORMULAIRE/viewform?embedded=true">Chargement…</iframe>
     </main>
     <footer>
         <p>&copy; 2024 Services Informatiques Pays Basque. Tous droits réservés.</p>
